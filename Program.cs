@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
+using System.Text;
 
 
 namespace ConsoleApp1
@@ -20,16 +22,19 @@ namespace ConsoleApp1
 
             // другрий спосіб написання циклу
 
-            foreach (string arg in args)
-                Console.WriteLine("Argument: {0}", arg);
+            //foreach (string arg in args)
+              //  Console.WriteLine("Argument: {0}", arg);
+            
             //UsingForeach(args);
             //UseReadline();
             //LocalVar();
             //NewAndDefault();
-            UseChar();
-            UseParse();
-            ParseFromStringsWithTryParse();
-
+            //UseChar();
+            //UseParse();
+            //ParseFromStringsWithTryParse();
+            //UseBigInteger();
+            StringFunctionality();
+            UseStringBilder();
             Console.ReadLine();
 
             return -1;
@@ -125,6 +130,63 @@ namespace ConsoleApp1
                 Console.WriteLine("Failed to convert the input ({0}) to a double", value);
             }
       
+        }
+
+        static void UseBigInteger()
+        {
+            // Используем биг интеджер с библиотеки нумеретикс
+            BigInteger val = BigInteger.Parse("9");
+            Console.WriteLine(val);
+            BigInteger large = 9;
+            BigInteger huge = val + large;
+            Console.WriteLine(huge);
+        }
+
+        static void StringFunctionality()
+        {
+            //Методы для работы со строками
+            string MyName = "Alexandr Sasha h l p";
+            String MySurname = "Grinchuck";
+
+            Console.WriteLine("Len str= {0}",MyName.Length);
+            Console.WriteLine("Replace 'xa' na 'XX' = {0}", MyName.Replace("xa", "XXX"));
+            //  Tак работает Split
+            string[] m = MyName.Split(' ');
+            foreach(string i in m)
+            {
+                Console.WriteLine(i);
+            }
+            //конкатенация строк
+            string sum = MyName + MySurname;
+            Console.WriteLine(sum);
+            // Специальные\управляющие символы 
+            Console.WriteLine("=> Escape characters:\a");
+            string strWithTabs = "Model\tColor\tSpeed\tPet Name\a ";
+            Console.WriteLine(strWithTabs);
+            //дословные строки (специальные\управяющие символы будут игнорироваться)
+            Console.WriteLine(@"С:\MyApp\bin\Debug");
+            //проверка на равенство строк
+            if(MyName == MySurname)
+            {
+                Console.WriteLine("строки равны");
+            }
+            else
+            {
+                Console.WriteLine("строки не равны");
+            }
+            Console.WriteLine(MyName.Equals(MySurname));
+            Console.WriteLine(MySurname[0]);
+            // интерполяція строк
+            Console.WriteLine($"My name {MyName}, but my surname is {MySurname}");
+        }
+
+        static void UseStringBilder()
+        {
+            //Этот класс позволяет создавать обьект похожий на строку но который можно изменять
+            StringBuilder sb = new StringBuilder("Sasha alex");
+            sb.AppendLine("Inna");
+            sb.Replace("Sasha", "grinchuck");
+            Console.WriteLine(sb.ToString());// чтобы вывести обэкт класа StringBilder нужно преобразовать его в строку
         }
     }
 
