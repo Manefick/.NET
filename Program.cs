@@ -16,15 +16,15 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello");
 
-            // Перший спосіб написання циклу 
+            // Перший спосіб написання циклу используеться при когда нужно конкретное к-во повторений
             //for (int i = 0; i < args.Length; i++)
             //    Console.WriteLine("Arg : {0}", args[i]);
 
-            // другрий спосіб написання циклу
+            // другрий спосіб написання циклу используется для итерации по контейнеру
 
             //foreach (string arg in args)
-              //  Console.WriteLine("Argument: {0}", arg);
-            
+            //  Console.WriteLine("Argument: {0}", arg);
+
             //UsingForeach(args);
             //UseReadline();
             //LocalVar();
@@ -33,8 +33,12 @@ namespace ConsoleApp1
             //UseParse();
             //ParseFromStringsWithTryParse();
             //UseBigInteger();
-            StringFunctionality();
-            UseStringBilder();
+            //StringFunctionality();
+            //UseStringBilder();
+            //TypesConvertation();
+            //NeYavnoType();
+            //Cikle_and_IF();
+            SwitchOnStnngExample();
             Console.ReadLine();
 
             return -1;
@@ -64,7 +68,7 @@ namespace ConsoleApp1
             Console.WriteLine("Data declaration");
             //Види обьявления переменных
             int myInt = 12;
-            
+
             string myString;
             myString = "This is string";
 
@@ -96,7 +100,7 @@ namespace ConsoleApp1
             Console.WriteLine("char.IsWhiteSpace('Hello There’, 5): {0}",
             char.IsWhiteSpace("Hello There", 5));
             Console.WriteLine("char.IsLetter: {0}",
-            char.IsLetter("dff3ff",2));
+            char.IsLetter("dff3ff", 2));
             Console.WriteLine("char.IsPunctuation(’?'): {0}",
             char.IsPunctuation('?'));
             Console.WriteLine();
@@ -129,7 +133,7 @@ namespace ConsoleApp1
                 // Преобразование потерпело неудачу
                 Console.WriteLine("Failed to convert the input ({0}) to a double", value);
             }
-      
+
         }
 
         static void UseBigInteger()
@@ -148,11 +152,11 @@ namespace ConsoleApp1
             string MyName = "Alexandr Sasha h l p";
             String MySurname = "Grinchuck";
 
-            Console.WriteLine("Len str= {0}",MyName.Length);
+            Console.WriteLine("Len str= {0}", MyName.Length);
             Console.WriteLine("Replace 'xa' na 'XX' = {0}", MyName.Replace("xa", "XXX"));
             //  Tак работает Split
             string[] m = MyName.Split(' ');
-            foreach(string i in m)
+            foreach (string i in m)
             {
                 Console.WriteLine(i);
             }
@@ -166,7 +170,7 @@ namespace ConsoleApp1
             //дословные строки (специальные\управяющие символы будут игнорироваться)
             Console.WriteLine(@"С:\MyApp\bin\Debug");
             //проверка на равенство строк
-            if(MyName == MySurname)
+            if (MyName == MySurname)
             {
                 Console.WriteLine("строки равны");
             }
@@ -188,6 +192,86 @@ namespace ConsoleApp1
             sb.Replace("Sasha", "grinchuck");
             Console.WriteLine(sb.ToString());// чтобы вывести обэкт класа StringBilder нужно преобразовать его в строку
         }
-    }
 
+        static void TypesConvertation()
+        {
+            // Преобразование типов
+            short num1 = 30000, num2 = 30000;
+            // ключевое слово checked выполняет проверку на переполнения и вызывает исключение
+            try
+            {// явное приведение к типу short, но если пробразовывать
+             //большой тип(int32) в маленький(int16)  с помощю (short) то получиться переполнение и потеря даных
+                short ansver = checked((short)Add(num1, num2));
+                Console.WriteLine(ansver);
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        static int Add(int x, int y)
+        {
+            return x + y;
+        }
+
+        static void NeYavnoType()
+        {
+            // для неявной типизации обьектов перед ними используеться слово var
+            var num = 12;
+            string s = "Urban bar";
+            Console.WriteLine($"{num.GetType().Name} and {s.GetType().Name}");
+
+        }
+        static void Cikle_and_IF()
+        {
+            //Описание циклов и условных операторов
+            int a = 1;
+            while (a < 5)
+            {
+                Console.WriteLine(a);
+                a++;
+            }
+            Console.WriteLine(a);
+            //do/while используеться для тоо что бы выполнить код хотябы один раз если 
+            // в блоке while условие не выполняеться !!делай это пока условие не выполниться!!
+            do
+            {
+                Console.WriteLine(a);
+            } while (a < 0);
+
+            // if else
+            if (a >= 5)
+            {
+                Console.WriteLine("chuslo is big");
+            }
+            else { Console.WriteLine("Chislo is small"); }
+            // условная операция (сокращенная запись if else)
+            // напишем ту же проверку тлько сокращенно
+            Console.WriteLine(a >= 5 ? "Chuslo is big" : "chuclo is small");
+            //   & - оператор И (and)
+            //  || - оператор ИЛИ (or) 
+            //  ! - оператор НЕ (not)
+        }
+        static void SwitchOnStnngExample()
+        {
+            // Switch сравнивает переданый ему параметр с параметрами описаными в "случаях" case
+            Console.WriteLine("C# or VB");
+            Console.Write("Please pick your language preference: ");
+            string langChoice = Console.ReadLine();
+            switch (langChoice.ToUpper())
+            {
+                case "C#":
+                    Console.WriteLine("Good choice, C# is a fine language.");
+                    break;
+                case "VB":
+                    Console.WriteLine("VB: OOP, multithreading and more!");
+                    break;
+                default:
+                    Console.WriteLine("Well... good luck with that!");
+                    break;
+            }
+        }
+    }
 }
