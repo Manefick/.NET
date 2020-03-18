@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-using System.Text;
-
 
 namespace ConsoleApp1
 {
@@ -15,6 +13,7 @@ namespace ConsoleApp1
         static int Main(string[] args)
         {
             Console.WriteLine("Hello");
+            Part_Two.Arrays();
 
             // Перший спосіб написання циклу используеться при когда нужно конкретное к-во повторений
             //for (int i = 0; i < args.Length; i++)
@@ -24,6 +23,8 @@ namespace ConsoleApp1
 
             //foreach (string arg in args)
             //  Console.WriteLine("Argument: {0}", arg);
+
+
 
             //UsingForeach(args);
             //UseReadline();
@@ -38,7 +39,7 @@ namespace ConsoleApp1
             //TypesConvertation();
             //NeYavnoType();
             //Cikle_and_IF();
-            SwitchOnStnngExample();
+            //SwitchOnStnngExample();
             Console.ReadLine();
 
             return -1;
