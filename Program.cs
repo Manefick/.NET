@@ -15,12 +15,15 @@ namespace ConsoleApp1
 
             //Part_Two.Arrays();
 
-            double[] kk = {1.2, 1.4, 0.4 };
-            Console.WriteLine(Part_Two.Avg(kk));
+            //double[] kk = {1.2, 1.4, 0.4 };
+            //Console.WriteLine(Part_Two.Avg(kk));
 
-            Console.WriteLine(ReloadOperators.Add(3, 5));
-            Console.WriteLine(ReloadOperators.Add("Sasha","Grinchuck" ));
+            //Console.WriteLine(ReloadOperators.Add(3, 5));
+            //Console.WriteLine(ReloadOperators.Add("Sasha","Grinchuck" ));
 
+            //DataType.LearnENum();
+            //UseStructures.UsePoint();
+            FunTuple.Tup();
 
             //Создание екземпляра класса и вызов его метода
             //Part_Two Test = new Part_Two();

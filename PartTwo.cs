@@ -61,4 +61,108 @@ namespace ConsoleApp1
         }
     }
 
+    //работа з Перечислениями
+    class DataType
+    {
+        // перечисления
+        public enum EmpType
+        {
+            Manager =10,
+            Grunt = 1,
+            Contractor = 100,
+            VicePresident = 9
+        }
+        public static void LearnENum()
+        {
+            EmpType emp = EmpType.Manager;//перемееная типа перечисления которого мы создали 
+            AskEnum(emp);
+            //Console.WriteLine(Enum.GetUnderlyingType(typeof(EmpType)));
+            Console.WriteLine((int) emp);
+            ParseEnum(emp);
+            
+        }
+        public static void ParseEnum(System.Enum e)
+        {
+            // Хотим вывести все значения перечисления
+            Array EnumValue = Enum.GetValues(e.GetType());
+            for(int i = 0; i < EnumValue.Length; i++)
+                Console.WriteLine("Name : {0}, Value: {0:D}", EnumValue.GetValue(i));
+        }
+
+        public static void AskEnum(EmpType e)
+        {
+            switch (e)
+            {
+                case EmpType.Manager:
+                    Console.WriteLine("Manager");
+                    break;
+                case EmpType.Contractor:
+                    Console.WriteLine("Contractor");
+                    break;
+            }
+        }
+    }
+
+    class UseStructures
+    {
+        struct Point
+        {
+            // поля(аргументі структур)
+            public int x;
+            public int y;
+
+            //Конструктор структуры(они одинаковые и для класов и тд)
+            public Point(int Xreg, int Yreg)
+            {
+                x = Xreg;
+                y = Yreg;
+            }
+
+            //методы структуры
+            public void Plus()
+            {
+                x++; y++;
+            }
+            public void Minus()
+            {
+                x--; y--;
+            }
+            public void Display()
+            {
+                Console.WriteLine($"X ={x}, Y = {y}");
+            }
+
+        }
+ 
+        // Создание перемееной типа поинт/больше похоже на создание екземпляра класса в питоне
+        // Этот тип !структура! очень похож на клас в питоне
+        public static void UsePoint()
+        {
+            Point k;
+            k.x = 10;
+            k.y = 88;
+            k.Display();
+
+            Point o = new Point();
+            o.Display();
+            o.Plus();
+            o.Display();
+            //вызвали конструктор
+            Point RR = new Point(69, 228);
+            RR.Display();
+        }
+    }
+    // кортежи
+    class FunTuple
+    {
+        public static void Tup()
+        {
+            (string, int, string) values = ("a", 5, "c");
+            var v = ("a", 5, "c");
+            Console.WriteLine(values.Item1);
+            var valuesWithNames2 = (FirstLetter: "a", TheNumber: 5, SecondLetter: "c");
+            Console.WriteLine(valuesWithNames2.TheNumber);
+        }
+    }
+
 }
