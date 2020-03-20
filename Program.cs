@@ -12,9 +12,19 @@ namespace ConsoleApp1
     {
         static int Main(string[] args)
         {
-            Console.WriteLine("Hello");
-            Part_Two.Arrays();
 
+            //Part_Two.Arrays();
+
+            double[] kk = {1.2, 1.4, 0.4 };
+            Console.WriteLine(Part_Two.Avg(kk));
+
+            Console.WriteLine(ReloadOperators.Add(3, 5));
+            Console.WriteLine(ReloadOperators.Add("Sasha","Grinchuck" ));
+
+
+            //Создание екземпляра класса и вызов его метода
+            //Part_Two Test = new Part_Two();
+            //Console.WriteLine(Test.Avg(kk));
             // Перший спосіб написання циклу используеться при когда нужно конкретное к-во повторений
             //for (int i = 0; i < args.Length; i++)
             //    Console.WriteLine("Arg : {0}", args[i]);
