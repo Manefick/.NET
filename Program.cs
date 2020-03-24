@@ -12,6 +12,10 @@ namespace ConsoleApp1
     {
         static int Main(string[] args)
         {
+            Car bibi = new Car();
+            bibi.PrintInfoCar();
+            Car bib = new Car("Toyota",99);
+            bib.PrintInfoCar();
 
             //Part_Two.Arrays();
 
@@ -23,7 +27,7 @@ namespace ConsoleApp1
 
             //DataType.LearnENum();
             //UseStructures.UsePoint();
-            FunTuple.Tup();
+            //FunTuple.Tup();
 
             //Создание екземпляра класса и вызов его метода
             //Part_Two Test = new Part_Two();
@@ -133,7 +137,7 @@ namespace ConsoleApp1
         static void ParseFromStringsWithTryParse()
         {
             Console.WriteLine("Распарсим строку с помощю метода TryParse");
-            if (bool.TryParse("True", out bool b)) ;
+            if (bool.TryParse("True", out bool b))
             {
                 Console.WriteLine("Value of b: {0}", b); // Вывод значения b
             }

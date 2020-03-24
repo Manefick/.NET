@@ -162,6 +162,7 @@ namespace ConsoleApp1
             Console.WriteLine(values.Item1);
             var valuesWithNames2 = (FirstLetter: "a", TheNumber: 5, SecondLetter: "c");
             Console.WriteLine(valuesWithNames2.TheNumber);
+            Console.WriteLine(v.Item1);
         }
     }
 
