@@ -101,7 +101,8 @@ namespace ConsoleApp1
     }
 
     //Наследование 
-    class Avtomobil
+    abstract class Avtomobil//абстракный клас не может создавать свои екземплярыб он служит как набор общих свойст и методов для
+        //дочерних класов
     {
         public readonly int maxSpeed;
         private int currSpeed;
@@ -132,6 +133,7 @@ namespace ConsoleApp1
                     currSpeed = maxSpeed;
             }
         }
+        public abstract void Transmishion(string avtomat_or_mehanik);// абстракный метод , заставляет реализовать себя в дочерних классах
         public virtual void Display()//метод что можно преопределить в дочернем классе
         {
             Console.WriteLine("avto run with speed {0}, when max speed ={1}," +
@@ -154,6 +156,10 @@ namespace ConsoleApp1
         {
             model = m;
             moti.obem = mm;
+        }
+        public override void Transmishion(string k)//реализация абстрактного метода
+        {
+            Console.WriteLine(k);
         }
         public override void Display()// преопределение метода базового класса
         {

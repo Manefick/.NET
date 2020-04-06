@@ -15,7 +15,7 @@ namespace ConsoleApp1
             //Наследование, полиморфизм
             Mersedes mers = new Mersedes(120,100,5,"AMG",12.3);
             mers.Display();
-
+            mers.Transmishion("avto");
             //свойства properties
             //Prop prop = new Prop();
             //prop.PetName = "Mazda";
