@@ -12,10 +12,25 @@ namespace ConsoleApp1
     {
         static int Main(string[] args)
         {
-            Car bibi = new Car();
-            bibi.PrintInfoCar();
-            Car bib = new Car("Toyota",99);
-            bib.PrintInfoCar();
+            //Наследование, полиморфизм
+            Mersedes mers = new Mersedes(120,100,5,"AMG",12.3);
+            mers.Display();
+
+            //свойства properties
+            //Prop prop = new Prop();
+            //prop.PetName = "Mazda";
+            //prop.MyCar.Id = 1444444;
+            //Console.WriteLine("{0}----{1}", prop.Speed,prop.MyCar.Pay );
+            //prop.MyCar.Print();
+            //Employee e = new Employee("Sasha", 124, 10000);
+            //e.GiveBonus(999);
+            //e.Print();
+            //e.Name = "Inna";
+
+            //Car bibi = new Car();
+            //bibi.PrintInfoCar();
+            //Car bib = new Car("Toyota",99);
+            //bib.PrintInfoCar();
 
             //Part_Two.Arrays();
 
