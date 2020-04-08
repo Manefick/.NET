@@ -12,10 +12,24 @@ namespace ConsoleApp1
     {
         static int Main(string[] args)
         {
+            // ИСКЛЮЧЕНИЯ
+            FunWithExeption test = new FunWithExeption("Sasha", 20);
+            try
+            {
+                test.BuyBeer();
+            }
+            catch(Exception t)
+            {
+                Console.WriteLine(t.Message);
+                Console.WriteLine(t.Source);
+            }
+
+
             //Наследование, полиморфизм
-            Mersedes mers = new Mersedes(120,100,5,"AMG",12.3);
-            mers.Display();
-            mers.Transmishion("avto");
+            //Mersedes mers = new Mersedes(120,100,5,"AMG",12.3);
+            //mers.Display();
+            //mers.Transmishion("avto");
+
             //свойства properties
             //Prop prop = new Prop();
             //prop.PetName = "Mazda";

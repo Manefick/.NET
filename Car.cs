@@ -167,7 +167,26 @@ namespace ConsoleApp1
             Console.WriteLine($"model  = {model}, volum of motor ={moti.obem}");
         }
     }
-
+    //ИСКЛЮЧЕНИЯ
+    class FunWithExeption
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public FunWithExeption(string Ename, int Eage)
+        {
+            Name = Ename;
+            Age = Eage;
+        }
+        public void BuyBeer()
+        {
+            if (Age > 21)
+            {
+                Console.WriteLine($"{Name} buy beer");
+            }
+            else throw new Exception($"{Name} is chaild, he dont buy beer!!!");
+            
+        }
+    }
 
 }
 
