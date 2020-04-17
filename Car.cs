@@ -183,8 +183,13 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"{Name} buy beer");
             }
-            else throw new Exception($"{Name} is chaild, he dont buy beer!!!");
-            
+            else
+            {
+                Exception ex = new Exception($"{Name} is chaild, he dont buy beer!!!");
+                ex.HelpLink = "возрост должен быть больше 21";
+                throw ex;
+            }
+
         }
     }
 

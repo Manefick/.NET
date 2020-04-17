@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="Glava8.cs" />
     <Compile Include="PartTwo.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="Program.cs" />

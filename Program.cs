@@ -12,17 +12,35 @@ namespace ConsoleApp1
     {
         static int Main(string[] args)
         {
+            //ИНТЕРФЕЙСЫ
+            Shape[] s = { new Triangle("Triangle", 3), new Square("square"), new Circle("circle", 34) };
+            for(int i =0; i < s.Length; i++)
+            {
+                if (s[i] is IPoint ip)
+                {
+                    Console.WriteLine("The {0}  have {1} points", s[i].Name, ip.Points);
+                }
+                else Console.WriteLine("The {0} dont have points", s[i].Name);
+            }
+
+            Number num = new Number();
+            foreach(One t in num)
+            {
+                Console.WriteLine(t.O);
+            }
+
             // ИСКЛЮЧЕНИЯ
-            FunWithExeption test = new FunWithExeption("Sasha", 20);
-            try
-            {
-                test.BuyBeer();
-            }
-            catch(Exception t)
-            {
-                Console.WriteLine(t.Message);
-                Console.WriteLine(t.Source);
-            }
+            //FunWithExeption test = new FunWithExeption("Sasha", 20);
+            //try
+            //{
+            //    test.BuyBeer();
+            //}
+            //catch(Exception t)
+            //{
+            //    Console.WriteLine(t.Message);
+            //    Console.WriteLine(t.Source);
+            //    Console.WriteLine(t.HelpLink);
+            //}
 
 
             //Наследование, полиморфизм
