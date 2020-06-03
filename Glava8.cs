@@ -110,4 +110,23 @@ namespace ConsoleApp1
             return Arr_ones.GetEnumerator();
         }
     }
+    // итератор через yield
+    class Second: IEnumerable
+    {
+        private Two[] twos = new Two[3];
+        public Second()
+        {
+            twos[0] = new Two(11, 12, 13);
+            twos[1] = new Two(14, 15, 16);
+            twos[2] = new Two(17, 18, 19);
+
+        }
+        public IEnumerator GetEnumerator()
+        {
+            foreach(Two t in twos)
+            {
+                yield return t;
+            }
+        }
+    }
 }
