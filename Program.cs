@@ -12,29 +12,23 @@ namespace ConsoleApp1
 {
     class Program
     {
-        enum En
-        {
-            a=10,
-            b,
-            c
-
-        }
         static int Main(string[] args)
         {
-            //Cinema cinema = new Cinema();
-            //int avg = 0;
-            //int z = 0;
-            //foreach (Viewer v in cinema)
-            //    if (v == null)
-            //        Console.WriteLine("Null");
-            //    else
-            //    {
-            //        z++;
-            //        avg += v.Age;
-            //        v.Display();
-            //    }
-            //Console.WriteLine("AVG: {0}",avg/z);
-            
+            //LINQ немедленое выполнение
+            //string[] names = { "Sasha+Inna", "Sasha+Oksana", "Igor", "mISHA", "Sasha+Naruto", "Beer" };
+            //LINQ linq = new LINQ();
+            //string[] result = linq.TestLinq(names);
+            //foreach(var i in result)
+            //{ Console.WriteLine(i); }
+            ////LINQ отложеное выполнение, вместо var  почти всегда подходит IEnumerable<T>
+            //var sasha = from i in names where i.Contains("Sasha") select i;
+            //foreach(var k in sasha)
+            //{ Console.WriteLine(k); }
+
+            Cinema cinema = new Cinema();
+            cinema.ShowViewers();
+            cinema.agregate();
+
             //простой делегат
 
             //Glava10.Binary b = new Glava10.Binary(Glava10.SimpleMath.Add);
